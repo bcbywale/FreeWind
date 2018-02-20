@@ -1,4 +1,11 @@
 
 {
-"units":"lb"
+"units":"lbf",
+"speedUnits":"kn",
+"speeds":[50, 70, 100],
+"headingIncrement":77,
+"model":{
+
+}
+
 }
