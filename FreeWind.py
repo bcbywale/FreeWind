@@ -1,7 +1,6 @@
 import json
 import sys
 from pprint import pprint
-inFile = sys.argv[1]
 
 class bcolors:
     HEADER = '\033[95m'
@@ -14,6 +13,16 @@ class bcolors:
     UNDERLINE = '\033[4m'
 
 print(bcolors.HEADER + "Welcome to FreeWind." + bcolors.ENDC)
+
+try:
+    inFile = sys.argv[1]
+except:
+    sys.exit("No input file specified...")
+try:
+    outFile = sys.argv[2]
+except IndexError:
+    print(bcolors.WARNING + "No output filename specified, using default outfile.txt" + bcolors.ENDC)
+    outFilie = 'outfile.txt'
 
 with open(inFile) as data_file:
     data = json.load(data_file)
