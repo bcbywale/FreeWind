@@ -104,7 +104,10 @@ pprint(ch)
 print(bcolors.OKBLUE + "Please make sure your model units match." + bcolors.ENDC)
 input("Review the above information and press enter to begin reading model data...")
 
-#TODO: Read in model data from json file to python class 
+#TODO: Read in model data from json file to python class
+pprint(data["model"])
+#TODO: Output a 3d model of the data
+
 
 input("Review the above information and press enter to begin calculating wind speeds...")
 for speed in data["speeds"]:
