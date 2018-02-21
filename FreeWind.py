@@ -83,7 +83,7 @@ if headingIncrement < 0:
     sys.exit("Error in heading input, Exiting...")
 elif headingIncrement < 1:
     print(bcolors.WARNING + "Warning, heading increment is less than one degree." + bcolors.ENDC)
-    ans = input("Continue (y/n)?:")
+    ans = input("Continue (y/n)?:").lower()
     if ans == "n":
         sys.exit("Error in heading input, Exiting...")
     elif ans == "y":
@@ -129,3 +129,11 @@ for speed in data["speeds"]:
 #TODO: Write output to file in whatever format required
 
 print("Finished calculating with no errors, writing output file...")
+
+if os.path.isfile(outFile) then:
+    outAns = input("Output file alread exists, overwright? (y/n)").lower()
+    if outAns == "y":
+        print("Overwriting existing file.")
+    elif outAns == "n":
+        outFile = input("PLease enter a new output file name: ")
+    else:
