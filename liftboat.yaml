@@ -1,0 +1,54 @@
+---
+units: lbf
+speedUnits: kn
+speeds:
+- 50
+- 70
+- 100
+headingIncrement: 77
+model:
+  hull:
+    cs: hull
+    shape: rectangle
+    origin:
+    - 0
+    - 0
+    - 0
+    size:
+    - 185
+    - 135
+    - 15
+    rotation:
+    - 0
+    - 0
+    - 0
+  deckhouse:
+    cs: deck house
+    shape: rectangle
+    origin:
+    - -30
+    - 0
+    - 7.5
+    size:
+    - 30
+    - 30
+    - 50
+    rotation:
+    - 0
+    - 0
+    - 0
+  aft leg:
+    cs: clyinder
+    shape: clyinder
+    origin:
+    - 0
+    - 0
+    - 0
+    size:
+    - 4.75
+    - 4.75
+    - 335
+    rotation:
+    - 0
+    - 0
+    - 0
