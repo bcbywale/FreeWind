@@ -1,12 +1,14 @@
+#File for program wide settings. Do not edit unless you know what you're doing.
+
 ---
-availableUnits:
+availableUnits:    #list of units for input checking
 - N
 - kgf
 - lbf
-availableSpeedUnits:
+availableSpeedUnits: #list of speed units for input checking
 - m/s
 - kn
-cs:
+cs:     #per ABS MODU 2017 Rules
   sphere: 0.4
   clyinder: 0.5
   hull: 1
@@ -17,7 +19,7 @@ cs:
   under deck areas rough: 1.3
   small parts: 1.4
   Rig derric face: 1.25
-ch-meters:
+ch-meters:  #per ABS MODU 2017 Rules
   0.0-15.3: 1
   15.3-30.5: 1.1
   30.5-46.0: 1.2
@@ -36,7 +38,7 @@ ch-meters:
   228.5-244.0: 1.77
   244.0-259.0: 1.79
   259.0 and above: 1.8
-ch-feet:
+ch-feet: #per ABS MODU 2017 Rules
   0-50: 1
   50-100: 1.1
   100-150: 1.2

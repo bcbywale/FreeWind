@@ -1,4 +1,4 @@
-import json
+import yaml
 import sys, os
 from pprint import pprint
 from vesselModel import windModel
@@ -27,10 +27,10 @@ except IndexError:
     outFile = 'outfile.txt'
 
 with open(inFile) as data_file:
-    data = json.load(data_file)
+    data = yaml.load(data_file)
 
-with open('settings.json') as settings_file:
-    settings = json.load(settings_file)
+with open('settings.yaml') as settings_file:
+    settings = yaml.load(settings_file)
 
 units = data["units"]
 #P = f * Vk**2 * Ch * Cs

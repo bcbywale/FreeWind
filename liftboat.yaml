@@ -1,11 +1,14 @@
+#Vessel specific model, edit to match your vessel.
+
+
 ---
-units: lbf
-speedUnits: kn
+units: lbf  #must be lfb, kgf, or N
+speedUnits: kn #must be kn or m/s
 speeds:
 - 50
 - 70
 - 100
-headingIncrement: 77
+headingIncrement: 77 #must be greater than zero; less than 360
 model:
   hull:
     cs: hull
