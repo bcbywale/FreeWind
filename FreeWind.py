@@ -1,6 +1,7 @@
 import json
 import sys, os
 from pprint import pprint
+from vesselModel import windModel
 
 class bcolors:
     HEADER = '\033[95m'
@@ -115,19 +116,13 @@ print(bcolors.OKBLUE + "Please make sure your model units match." + bcolors.ENDC
 input("Review the above information and press enter to begin reading model data...")
 
 #TODO: Read in model data from json file to python class
-pprint(data["model"])
+windModel.loadModel(data["model"])
 #TODO: Output a 3d model of the data
-
-windForceTotal = 100
-windForceTotalCenter = [10,10,5]
 
 input("Review the above information and press enter to begin calculating wind speeds...")
 for speed in data["speeds"]:
     print("****************"+str(speed)+ " " + speedUnits +"*********************")
     for heading in headings:
-        windForceTotal = windForceTotal + heading
-        for coord in windForceTotalCenter:
-            coord = coord + 1
         #for part in model:
         #TODO: Calculate projected area for each object at this heading and determine
         print("Wind force is XXX at " + str(heading) + " degrees in " + str(speed) + " " + speedUnits)
@@ -152,5 +147,5 @@ while outAns == "null":
         outAns = 'ok'
 
 oFile = open(outFile, "w")
-oFile.write(str(windForceTotal) +","+ str(windForceTotalCenter))
+oFile.write("Hello, World!")
 oFile.close()
