@@ -1,5 +1,5 @@
 import json
-import sys
+import sys, os
 from pprint import pprint
 
 class bcolors:
@@ -20,9 +20,10 @@ except:
     sys.exit("No input file specified...")
 try:
     outFile = sys.argv[2]
+    print("Output filename set to: " + outFile)
 except IndexError:
     print(bcolors.WARNING + "No output filename specified, using default outfile.txt" + bcolors.ENDC)
-    outFilie = 'outfile.txt'
+    outFile = 'outfile.txt'
 
 with open(inFile) as data_file:
     data = json.load(data_file)
@@ -117,23 +118,39 @@ input("Review the above information and press enter to begin reading model data.
 pprint(data["model"])
 #TODO: Output a 3d model of the data
 
+windForceTotal = 100
+windForceTotalCenter = [10,10,5]
 
 input("Review the above information and press enter to begin calculating wind speeds...")
 for speed in data["speeds"]:
     print("****************"+str(speed)+ " " + speedUnits +"*********************")
     for heading in headings:
+        windForceTotal = windForceTotal + heading
+        for coord in windForceTotalCenter:
+            coord = coord + 1
         #for part in model:
-            #TODO: Calculate projected area for each object at this heading and determine
+        #TODO: Calculate projected area for each object at this heading and determine
         print("Wind force is XXX at " + str(heading) + " degrees in " + str(speed) + " " + speedUnits)
 
 #TODO: Write output to file in whatever format required
 
 print("Finished calculating with no errors, writing output file...")
 
-if os.path.isfile(outFile) then:
-    outAns = input("Output file alread exists, overwright? (y/n)").lower()
-    if outAns == "y":
-        print("Overwriting existing file.")
-    elif outAns == "n":
-        outFile = input("PLease enter a new output file name: ")
+outAns = "null"
+
+while outAns == "null":
+    if os.path.isfile(outFile):
+        outAns = input("Output file alread exists, overwright? (y/n)").lower()
+        if outAns == "y":
+            print("Overwriting existing file.")
+        elif outAns == "n":
+            outFile = input("PLease enter a new output file name: ")
+            outAns = "null"
+        else:
+            outAns = 'null'
     else:
+        outAns = 'ok'
+
+oFile = open(outFile, "w")
+oFile.write(str(windForceTotal) +","+ str(windForceTotalCenter))
+oFile.close()

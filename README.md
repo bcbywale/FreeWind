@@ -7,4 +7,4 @@ FreeCAD vs OpenNurbs
 
 Opened a development branch to hold works in progress..
 
-Just testing something.
+Consider  using yaml instead of json so i can add comments to the config files
